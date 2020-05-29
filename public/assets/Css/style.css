@@ -1,3 +1,103 @@
 * {
     font-family: "Poppins", sans-serif;
 }
+
+.navbar-nav>.nav-item {
+    color: #707070;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 5px;
+}
+
+.navbar-nav>.btnme {
+    background: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px 20px 20px 20px;
+    font-size: 15px;
+    border-radius: 50px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2), -3px -3px 8px white;
+}
+
+.navbar-nav>.btn-navbar {
+    color: #e84118;
+}
+
+.navbar-nav>.btn-navbar:hover {
+    color: white;
+    background: #e84118;
+    transition: 0.8s;
+}
+
+.navbar-nav>.nav-link:hover::after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #707070;
+    width: 15%;
+    margin: auto;
+    padding-bottom: 5px;
+    margin-bottom: -7px;
+}
+
+
+/* =={ Konten 1A }== */
+
+.working-area>.content-area>.area-left {
+    margin-top: 180px;
+    float: left;
+}
+
+.working-area>.content-area>.area-left>span {
+    color: #e84118;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 7px 7px;
+    border-radius: 10px 10px 10px 10px;
+    font-weight: 400;
+    font-size: 10px;
+}
+
+.working-area>.content-area>.area-left>.message-covid-1 {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 38px;
+    color: #4F4F4F;
+}
+
+.working-area>.content-area>.area-left>.desc-covid-1 {
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 12px;
+    color: #7A7A8F;
+}
+
+.working-area>.content-area>.area-left>.btnme2 {
+    background: none;
+    margin-left: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px 20px 20px 20px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2), -3px -3px 8px white;
+}
+
+.working-area>.content-area>.area-left>.btn-symptoms {
+    color: #e84118;
+}
+
+.working-area>.content-area>.area-left>.btn-symptoms:hover {
+    background: #e84118;
+    color: white;
+}
+
+
+/* =={ Konten 1B }== */
+
+.working-area>.content-area>.area-right {
+    margin-top: 10px;
+}
