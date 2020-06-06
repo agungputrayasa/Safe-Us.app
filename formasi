@@ -1,0 +1,180 @@
+
+//route information//
+Route::get('formasi', 'FormasiController@formasi')
+
+
+
+formasi.blade.php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+
+	<!-- semua link disini -->
+    <!-- css -->
+    <link rel="stylesheet" href="{{ asset('assets/Css/style.css') }}">
+    <!-- datepicker -->
+    <link rel="stylesheet" href="{{asset('assets/Css/bootstrap-datepicker.css')}}">
+    <!-- boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <!-- fonstawesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body id="page-top">
+			<nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
+			<div class="container">
+		  <a class="navbar-brand font-weight-bold text-black" href="#page-top">INFORMATION</a>
+		  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNav">
+		    <ul class="navbar-nav ml-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link js-scroll-trigger text-black" href="#home">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link js-scroll-trigger text-black" href="#About">About</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link js-scroll-trigger text-black" href="#Product">Product</a>
+		      </li>
+		      	<li class="nav-item">
+		        <a class="nav-link js-scroll-trigger text-black" href="#Contact">Contact</a>
+		      </li>
+		      </li>
+		      	<li class="nav-item">
+		        <button type="button" class="btn btn-outline-dark">Back</button>
+		      </li>
+		    </ul>
+		  </div>
+		</div>
+		</nav>
+	
+				<div class="jumbotron jumbotron-fluid">
+			  <div class="container">
+			  	<img src="{{asset('assets/Dist/assets pic/assets 8.png')}}" alt="">
+			    <h1 class="display-4">INFORMATION <br> <span class="font-weight-bold"> covid-19 </span></h1>
+			    <hr class="my-4">
+			    <p class="lead">Keep Your Distance Following The Government's Recommendations</p>
+			  </div>
+			</div>
+	<div class="container">
+	<ul class="list-unstyled">
+  <li class="media">
+    <img src="{{asset('assets/Dist/Design/assets 8.png')}}" alt="">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">1.Do you know what covid-19 virus is?</h5>
+      Coronavirus is a large family of viruses that cause disease in humans and animals. Humans usually cause respiratory infections, from the common cold to serious illnesses such as Middle East Respiratory Syndrome (MERS) and Severe Acute Respiratory Syndrome (SARS). A new type of coronavirus found in humans since an extraordinary event appeared in Wuhan China, in December 2019, was later named Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-COV2), and caused Coronavirus Disease-2019 (COVID-19).
+    </div>
+  </li>
+  <li class="media my-4">
+ 
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">2.Are antibiotics effective in preventing and treating COVID-19?</h5>
+  No, antibiotics only work against bacteria, not viruses. Because COVID-19 is caused by a virus, antibiotics cannot be used as a means of prevention or treatment. However, if you are hospitalized and diagnosed with COVID-19, you may be given antibiotics, because often there is a secondary infection caused by bacteria.
+    </div>
+  </li>
+  <li class="media">
+   <!--  <img src="..." class="mr-3" alt="..."> -->
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">3.How dangerous is this COVID-19?</h5>
+     Like other respiratory ailments, COVID-19 can cause mild symptoms including colds, sore throat, coughing, and fever. About 80% of cases can recover without the need for special care. About 1 out of every 6 people may suffer from severe pain, such as pneumonia or difficulty breathing, which usually occurs gradually. Although the mortality rate for this disease is still low (around 3%), for older people, and people with pre-existing medical conditions (such as diabetes, high blood pressure and heart disease), they are usually more prone to becoming ill severe. Looking at developments to date, more than 50% of confirmed cases have been declared to be improving, and the cure rate will continue to increase.
+  </div>
+	</li>
+	<li class="media">
+   <!--  <img src="..." class="mr-3" alt="..."> -->
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">4.How long does this virus last on the surface of an object?</h5>
+   It is not yet known with certainty how long COVID-19 can stay on the surface of an object, although preliminary studies show that COVID-19 can last for several hours, depending on the type of surface, temperature, or humidity of the environment. But a simple disinfectant can kill the virus so that it is impossible to infect people again. And familiarize hand washing with soap and water, or alcohol-based hand rub, and avoid touching your eyes, mouth or nose (facial triangle) more effectively protect yourself.
+  </div>
+	</li>
+	<li class="media">
+   <!--  <img src="..." class="mr-3" alt="..."> -->
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">5.Which is more susceptible to coronavirus infection, is it an older person, or a younger person?</h5>
+      There is no age limit on people being infected by this coronavirus (COVID-19). But older people, and people with pre-existing medical conditions (such as asthma, diabetes, heart disease, or high blood pressure) seem to be more prone to suffering from severe illness.
+  </div>
+    </div>
+  </li>
+</ul>
+	<br>
+		<br>
+		<br>
+	<br>
+<footer>
+	<div class="footer-content"></div>
+		<!-- <div class="content-pesan"></div> -->
+		
+	</div>
+	<div class="footer-bottom">
+		&copy 2020 - design by corona
+</footer>
+
+
+<!-- boostrap js dan jquery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="{{asset('assets/Js/bootstrap-datepicker.js')}}"></script>
+<script type="text/javascript"></script>
+</body>
+</html>
+
+
+FormasiController.php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class FormasiController extends Controller
+{
+    public function formasi(){
+        return view('formasi');
+    }
+}
+
+
+style.css
+/*body{
+    margin: 0;
+    padding: 0;*/
+}
+.footer-content{
+    width: 100%;
+    height: : 400px;
+    background: #454545;
+}
+.footer-bottom{
+    width: 100%;
+    height:20px;
+    color: black;
+    background: white;
+    text-align: center;
+    padding: -10px;
+}
+
+.jumbotron{
+    background-image: url(img/bunga.jpg);
+    background-size: cover;
+    height: 770px;
+    text-align: center;
+    margin-top: -120px;
+}
+.jumbotron .display-4{
+    color: black;
+    margin-top: 200px;
+}
+.jumbotron p{
+    color: black;
+    font-size: 25px;
+}
+.jumbotron hr {
+    border-color: black;
+    width: 150px;
+    border-width: 3px;
+}
