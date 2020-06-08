@@ -37,4 +37,9 @@ Route::get('/Data', 'CovidController@chart');
 
 // ===[Route CRUD]=== //
 
-Route::post('/Home/Store', 'HomeController@store');
+Route::get('/Home/Store', 'HomeController@store');
+Route::post('/Home/Create', 'HomeController@create');
+Route::put('/Home/{id}/Update', 'HomeController@update');
+Route::get('/Home/{id}/edit', 'HomeController@edit');
+Route::get('/Home/{id}/delete', 'HomeController@delete');
+

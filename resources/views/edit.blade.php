@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Safe Us | Form Pelaporan</title>
+    <title>Safe Us | Form Pelaporan | Edit</title>
 
     {{-- Fonts --}}
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white" id="navbar">
         <div class="container">
-                <a href="/Home" class="btn btn3c btn-navbar3c"><i class="fas fa-sign-out-alt"></i> &nbsp;Back To Home</a>
+                <a href="/Home/Store" class="btn btn3c btn-navbar3c"><i class="fas fa-sign-out-alt"></i> &nbsp;Back To Home</a>
                 <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">|</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -54,16 +54,17 @@
     </div>
 
     <div class="container mt-5">
-        <form action="/Home/Create" method="POST" class="main-form needs-validation" enctype="multipart/form-data" novalidate>
+        <form action="/Home/{{$data->id}}/Update" method="POST" class="main-form needs-validation" enctype="multipart/form-data" novalidate>
             {{ csrf_field() }}
+            {{method_field('PUT')}}
             <div class="row field justify-content-center">
                 <div class="col-md-4">
                     <label for="username" class="label">Username</label>
-                    <input type="text" class="form-control rounded-pill" id="usernamekamu" name="username" placeholder="Enter your name...">
+                    <input type="text" class="form-control rounded-pill" id="username" name="username" placeholder="Enter your name..." value="{{ $data->username }}">
                 </div>
                 <div class="col-md-4">
                     <label for="nik" class="label">NIK</label>
-                    <input type="text" class="form-control rounded-pill" id="mynik" name="mynik" placeholder="Enter your NIK...">
+                    <input type="text" class="form-control rounded-pill" id="mynik" name="mynik" placeholder="Enter your NIK..." value="{{ $data->mynik }}">
                 </div>
             </div>
             <div class="row block-field mt-4 justify-content-center">
@@ -74,7 +75,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroupPrepend">+62</span>
                         </div>
-                        <input type="tel" pattern="^\d{4}-\d{4}-\d{4}$" class="form-control" id="myphone" aria-describedby="inputGroupPrepend" name="myphone" required>
+                        <input type="tel" pattern="^\d{4}-\d{4}-\d{4}$" class="form-control" id="myphone" aria-describedby="inputGroupPrepend" name="myphone" value="{{ $data->myphone }}" required>
                         <div class="invalid-feedback">
                             Masukan Nomor yang Benar!
                         </div>
@@ -82,20 +83,23 @@
                 </div>
                 <div class="col-md-2">
                     <label for="umur" class="label">Your Age</label>
-                    <input type="text" class="form-control" id="age" name="age" placeholder="Enter your age...">
+                    <input type="text" class="form-control" id="age" name="age" placeholder="Enter your age..." value="{{ $data->age }}">
                 </div>
                 <div class="col-md-2">
                     <label for="choose" class="label">Your Job</label>
-                    <select class="browser-default custom-select" name="job">
+                    <select class="browser-default custom-select" name="job" value="{{ $data->job }}">
                         <option selected>Click Button</option>
-                        <option value="Private employees">Private employees</option>
-                        <option value="Businessman">Businessman</option>
-                        <option value="Government employees">Government employees</option>
-                        <option value="Teacher">Teacher</option>
-                        <option value="Lecturer">Lecturer</option>
-                        <option value="Programmer">Programmer</option>
-                        <option value="Designer">Designer</option>
-                        <option value="Contractior">Contractior</option>
+                        @foreach($job as $value)
+                        <option value="{{$value}}" @if($value==$data->job ) selected @endif>{{$value}}</option>
+                        @endforeach
+                        <!-- <option value="1">Private employees</option>
+                        <option value="2">Businessman</option>
+                        <option value="4">Government employees</option>
+                        <option value="5">Teacher</option>
+                        <option value="6">Lecturer</option>
+                        <option value="7">Programmer</option>
+                        <option value="8">Designer</option>
+                        <option value="9">Contractior</option> -->
                         <option value="10">And More ...</option>
                     </select>
                 </div>
@@ -108,48 +112,43 @@
             <div class="row field-low justify-content-center mt-4">
                 <div class="col-md-4">
                     <label for="username" class="label">Username</label>
-                    <input type="text" class="form-control rounded-pill" id="username" name="user_infec" placeholder="Enter your name...">
+                    <input type="text" class="form-control rounded-pill" id="username" name="user_infec" placeholder="Enter your name..." value="{{ $data->user_infec }}">
                 </div>
                 <div class="col-md-4">
                     <label for="nik" class="label">NIK</label>
-                    <input type="text" class="form-control rounded-pill" id="mynik" name="user_nik" placeholder="Enter your NIK...">
+                    <input type="text" class="form-control rounded-pill" id="mynik" name="user_nik" placeholder="Enter your NIK..." value="{{ $data->user_nik }}">
                 </div>
             </div>
             <div class="row field-low justify-content-center mt-4">
                 <div class="col-md-4">
                     <label for="date" class="label">Please Choose a date</label>
-                    <input type="date" class="form-control" id="datepicker" name="date" placeholder="date...">
+                    <input type="date" class="form-control" id="datepicker" name="date" placeholder="date..." value="{{ $data->date }}">
                 </div>
                 <div class="col-md-2">
                     <div class="form-group">
                         <label for="region">Choose a Region</label>
-                        <select name="region" class="custom-select">
+                        <select name="region" value="{{ $data->region }}" class="custom-select">
                             <option selected>Your Region...</option>
-                            <option value="Denpasar">Denpasar</option>
-                            <option value="Badung">Badung</option>
-                            <option value="Karangasem">Karangasem</option>
-                            <option value="Klungkung">Klungkung</option>
-                            <option value="Bangli">Bangli</option>
-                            <option value="Gianyar">Gianyar</option>
-                            <option value="Jembrana">Jembrana</option>
-                            <option value="Tabanan">Tabanan</option>
+                            @foreach($kota as $value)
+                                <option value="{{$value}}" @if($value==$data->region ) selected @endif>{{$value}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
                 <div class="col-md-2">
                     <label for="umur" class="label">Age</label>
-                    <input type="text" class="form-control" id="umurkamu" name="user_age" placeholder="Enter your age...">
+                    <input type="text" class="form-control" id="umurkamu" name="user_age" placeholder="Enter your age..." value="{{ $data->user_age }}">
                 </div>
             </div>
             <div class="row field-address justify-content-center mt-4">
                 <div class="col-md-8">
                     <label for="address">Address</label>
-                    <textarea type="address" name="address" id="address" class="form-control" placeholder=""></textarea>
+                    <textarea type="address" name="address" id="address" value="{{ $data->address }}" class="form-control" placeholder="">{{ $data->address }}</textarea>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-2">
-                    <button type="submit" class="btn btn-primary btn-custom btn-block font-weight-bold mt-5" name="kirim" value="kirim">Kirim</button>
+                    <button type="submit" class="btn btn-primary btn-custom btn-block font-weight-bold mt-5" name="edit" value="edit">Edit</button>
                 </div>
             </div>
         </form>
