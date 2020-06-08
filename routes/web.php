@@ -13,12 +13,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// ===[Route Tampilan all Page]=== //
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-
-// == Route Index == //
-Route::get('Home', function () {
+Route::get('/Home', function () {
     return view('master');
 });
+
+Route::get('/Dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/Home/Data-Statistic', 'HomeController@data_status');
+
+
+Route::get('/Home/Form', 'HomeController@form');
+
+Route::get('/Data', 'CovidController@chart');
+
+
+// ===[Route CRUD]=== //
+
+Route::get('/Home/Store', 'HomeController@store');
+Route::post('/Home/Create', 'HomeController@create');
+Route::put('/Home/{id}/Update', 'HomeController@update');
+Route::get('/Home/{id}/edit', 'HomeController@edit');
+Route::get('/Home/{id}/delete', 'HomeController@delete');
+
